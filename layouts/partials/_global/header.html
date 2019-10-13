@@ -1,0 +1,33 @@
+<header id="js-header">
+  <div class="max-w-6xl mx-auto py-6 flex flex-wrap items-center justify-between">
+    <a href="{{ .Site.BaseURL }}docs/talos/" class="site-title">
+      {{ with .Site.Params.logo | absURL }}        
+        <img src="{{ . }}" alt="{{ $.Site.Title }}" id="header-logo" width="400">
+        {{ else }}            
+          {{.Site.Title}}      
+      {{ end }}    
+    </a>
+
+    {{ if not .Params.hideVersionsList }}
+      <div class="block">
+        <div class="dropdown">
+          <div class="dropdown-activator">
+            <a class="" href="#">This is documentation for Talos version 
+                <span class="font-bold color-brand-1">{{ $.Site.Params.TALOSDOCSVERSION }}</span>.
+            </a>
+          </div>
+
+          <div class="dropdown-content">
+            <div class="p-3 text-sm bg-white font-bold">Switch To:</div>
+            {{ range .Site.Params.talosversions }}
+            {{ $active := (eq .tag $.Site.Params.TALOSDOCSVERSION) }}
+                <div class="dropdown-item"><a class="{{ if $active }}font-bold {{ end }}" 
+                  href="/{{ .tag }}/docs/talos/">{{ .name }}</a></div>  
+            {{ end }}
+            </div>
+          
+        </div>
+      </div>
+    {{ end }}
+  </div>
+</header>

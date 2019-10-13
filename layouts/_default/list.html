@@ -1,0 +1,24 @@
+{{ define "main" }}
+<div class="max-w-6xl mx-auto">  
+    {{- partial "_components/page-heading.html" . -}}      
+    {{ range $i, $blocks := .Params.blocks }}      
+      {{if (templates.Exists (printf "partials/blocks/%s.html" .block)) }}        
+        <div id="{{ .block }}-{{ $i }}"{{ with .spacing }} class="mt-{{ . }}"{{ end }}>          
+          {{ partial (printf "blocks/%s.html" .block) . }}  
+        </div>      
+      {{ end }}
+    {{ else }}
+    <div class="md:grid md:grid-columns-2 lg:grid-columns-3 xl:grid-columns-2">  
+      {{ range .Paginator.Pages }}
+        {{- partial "summary.html" . -}}
+      {{ end }}    
+    </div>
+  {{ end }}
+  {{- template "_internal/pagination.html" . -}}
+</div>
+{{ end }}
+
+
+{{/* 
+   {{ if templates.Exists "partials/tnd-seo/print.html" }} 
+ */}}

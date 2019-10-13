@@ -1,0 +1,25 @@
+h1,
+h2,
+h3,
+h4,
+h5 {
+  @apply .my-4;
+}
+
+p {
+  @apply .mb-4;
+}
+p a:link,
+p a:active,
+p a:visited {
+  /* This blue has a 4.77 contrast ratio on white 4.56 on near-white */
+  color: #1a76c1;
+}
+p a:hover {
+  color: #12283a;
+}
+
+li {
+  list-style-position: outside;
+  margin-left: 1.25rem;
+}

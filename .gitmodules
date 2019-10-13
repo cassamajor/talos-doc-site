@@ -1,0 +1,11 @@
+[submodule "docs"]
+	path = docs
+	url = https://github.com/talos-systems/talos.git
+        branch = master
+[submodule "docs-0.2.0"]
+	path = docs-0.2.0
+	url = https://github.com/talos-systems/talos.git
+        branch = v0.2.0
+[submodule "components/components/tnd-seo"]
+	path = components/components/tnd-seo
+	url = https://github.com/theNewDynamic/hugo-component-tnd-seo.git

@@ -1,0 +1,7 @@
+{{ with .Params.images }}
+<div class="lazyload float-right clearfix p-8" style="max-width: 30%;" data-noscript="">
+  <noscript>
+    <img src="{{ index . 0 | relURL }}" class="lazyload rounded shadow" alt="Image " />
+  </noscript>
+</div>
+{{ end }}

@@ -1,0 +1,98 @@
+/* purgecss start ignore */
+header {
+  @apply bg-white px-6 border-b z-50;
+}
+
+header .site-title {
+  @apply font-brand text-3xl text-primary-color-600 leading-tight;
+}
+
+nav[aria-label="main"] div {
+  @apply font-brand text-base flex flex-wrap items-center inline-block mr-8;
+}
+nav[aria-label="main"] .tnd-Nav__item {
+  @apply block;
+}
+
+nav[aria-label="main"] .tnd-Nav__item a {
+  @apply text-primary-color-700 mt-4 mb-2 text-xl inline-block border-b-2 border-white;
+}
+
+nav[aria-label="main"] .tnd-Nav__item--active a,
+nav[aria-label="main"] .tnd-Nav__item a:hover {
+  @apply text-primary-color-700 border-b-2 border-primary-color-700;
+}
+
+nav[aria-label="footer"] {
+  @apply ml-8;
+}
+nav[aria-label="footer"],
+nav[aria-label="footer"] .tnd-Nav__item {
+  @apply inline-block px-4;
+}
+
+nav[aria-label="main"] {
+  @apply mb-4;
+}
+@screen md {
+  nav[aria-label="main"] {
+    @apply mb-auto;
+  }
+}
+@screen lg {
+  nav[aria-label="main"] .tnd-Nav__item {
+    @apply inline-block;
+  }
+  
+  nav[aria-label="main"] {
+    @apply block;
+  }
+  header {
+    @apply sticky top-0;
+    transition: height 0.3s;
+  }
+
+  nav[aria-label="main"] .tnd-Nav__item a {
+    @apply mb-auto mt-auto;
+  }
+}
+
+/* MOBILE MENU */
+/* Only show the hamburger if JS is working */
+html.no-js .hamburger {
+  @apply hidden;
+}
+html.js .hamburger {
+  @apply block;
+}
+/* With JS, tuck the menu away */
+html.js .menu_hidden_mobile {
+  @apply h-0 opacity-0;
+  transform: translatex(-820px);
+  /* transition: transform 0s, opacity 0.2s linear 0.2s; */
+}
+
+/* Toggle its visibility smoothly  */
+html.js .menu_hidden_mobile_displayed {
+  @apply h-auto opacity-100 bg-white;
+  transform: translatex(0);
+  transition: transform 0.3s, opacity 0.4s linear 0.2s;
+}
+
+/* Hide the mobile affordance on larger screens */
+@screen md {
+  html.js .hamburger {
+    @apply hidden;
+  }
+  html.js .menu_hidden_mobile {
+    @apply inline-block opacity-100 h-auto;
+    transform: translatex(0);
+  }
+}
+
+header#js-header.scrolled img#header-logo {
+  width: 150px;
+  transition: all 0.3s;
+}
+
+/* purgecss end ignore */

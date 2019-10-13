@@ -1,0 +1,13 @@
+<footer role="contentinfo">  
+  <div>
+    <a class="inline-block no-underline color-inherit" href="{{ .Site.BaseURL }}" >
+        &copy; {{ now.Format "2006" }} {{ .Site.Title }}
+    </a>
+    {{- partial "_global/menu.html" (dict "page" . "menu" "footer") -}}
+  </div>
+  {{ if eq .Title "About Talos Systems" }}
+  <a class="block no-underline color-inherit text-base" href="https://thenewdynamic.com" >
+    site by the New Dynamic
+  </a>
+  {{ end }}
+</footer>

@@ -1,0 +1,31 @@
+<ul class="docs-menu">
+  <!-- https://gohugo.io/templates/menu-templates/#section-menu-for-lazy-bloggers -->
+  {{ $currentPage := . }}
+  {{ range .Site.Menus.docs.ByWeight }}
+    {{ if .HasChildren }}
+      <li class="py-3">
+        <a class="text-lg relative docs-menu-item-top-level py-1 {{if ($currentPage.IsMenuCurrent "docs" .) }} docs-menu-active{{end}}" {{ if .URL }} href="{{ .URL | absURL }}" {{end}}>
+            <span class="relative">{{ .Name }}</span>
+        </a>
+        <ul class="py-0 pl-2">
+          {{ range .Children }}
+            <li class="ml-0">
+              <a class="relative docs-menu-item {{if or ($currentPage.IsMenuCurrent "docs" .) ($currentPage.HasMenuCurrent "docs" .) }} docs-menu-active{{end}}" {{ if .URL }} href="{{ .URL | absURL }}" {{end}}>
+                <span class="relative">{{ .Name }}</span>
+<!--                {{if ($currentPage.IsMenuCurrent "docs" .) }}
+                  <span class="rounded absolute inset-0 bg-gray-400 opacity-25"></span>
+                {{end}} -->
+              </a>
+            </li>
+          {{ end }}
+        </ul>
+      </li>
+    {{ else }}
+      <li class="">
+        <a class="font-bold relative docs-menu-item-top-level" {{ if .URL }} href="{{ .URL | absURL }}" {{end}}>
+            <span class="relative">{{ .Name }}</span>
+        </a>
+      </li>
+    {{ end }}
+  {{ end }}
+</ul>

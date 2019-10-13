@@ -1,0 +1,12 @@
+<article class="h-entry c-rich-text">
+
+  {{- partial "_components/page-heading.html" . -}}
+  {{partial "_components/image-article.html" .}}
+
+  {{ if .Params.Author }}
+      <strong>{{ .Params.Author }}</strong>
+  {{ end }}
+  <section class="border-t pt-4">
+    {{ .Content }}
+  </section>
+</article>

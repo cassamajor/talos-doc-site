@@ -1,0 +1,32 @@
+title: Talos Systems, Inc.
+baseURL: /
+#config files are to be found in the ./config/ folder.
+social:
+  github: talos-systems
+  twitter: talossystems
+params:
+  description: A modern operating system for Kubernetes.
+  logo: 'images/TalosSystems_Horizontal_Logo_FullColor_RGB-for-site.svg'
+  cta: 'Keep up to date with Talos Systems'
+  repo: https://www.github.com/talos-systems/talos
+  images:
+    - 'images/og-image.jpg'
+  seo:
+    # overides .Site.Title
+    site_name: Talos Systems, Inc.
+    # Used for articles without images
+    default_image: "images/og-image.jpg"
+    # if true will use the SEO data object to output an json+ld script tag.
+    jsonld: true
+    # if true will display a human readable overlay on everypage to monitor SEO data object (only if dev != production)
+    debug: false
+
+  # default version to build for development
+  talosdocsversion: master
+
+  # versions to build for production deployment
+  talosversions:
+  - name: "Development Branch (master)"
+    tag: master
+  - name: "Latest release: v0.2.0 (released Oct 4, 2019)"
+    tag: v0.2.0

@@ -1,0 +1,7 @@
+# Redirect default Netlify subdomain to primary domain
+https://talos-systems.netlify.com/* https://www.talos-systems.com/:splat 301!
+{{- range $p := .Site.Pages -}}
+{{- range .Aliases }}
+{{ . }} {{ $p.RelPermalink -}}
+{{- end }}
+{{- end -}}

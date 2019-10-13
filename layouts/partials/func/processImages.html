@@ -1,0 +1,5 @@
+{{ range (readDir "./assets/images/") }}
+{{ $files := printf "/images/%s" .Name }}
+{{ $image := resources.Get $files }}    
+{{ $image.Permalink }}
+{{ end }}

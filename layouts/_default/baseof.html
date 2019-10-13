@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.LanguageCode | default "en" }}" class="no-js">
+  <head>
+    {{ block "head" . }}
+      {{ partial "_head/meta.html" . }}
+    {{ end }}
+    {{ block "assets" .}}
+      {{ partialCached "_head/assets.html" . }}
+    {{ end }}
+    {{ block "scripts" .}}
+      {{ partialCached "_head/scripts.html" . }}
+    {{ end }}
+    {{ block "head_additions" .}}{{ end }}
+  </head>
+  <body class="{{ partial "_components/body-class" . }}">
+    <div class="content">
+      {{ block "header" . }}{{ partial "_global/header.html" . }}{{ end }}    
+      <main role="main">
+        {{ block "hero" . }}{{ end }}
+        <div id="content" class="content mb-4">
+          {{ block "main" . }}{{ end }}          
+        </div>          
+      </main>
+    </div>
+    {{ block "footer" . }}
+      {{- partial "_global/footer.html" . -}}
+    {{ end }}
+  </body>
+</html>

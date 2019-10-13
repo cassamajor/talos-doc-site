@@ -1,0 +1,45 @@
+DefaultContentLanguage: en
+languageCode: en-us
+canonifyURLs: false
+MetaDataFormat: yaml
+buildFuture: true
+enableRobotsTXT: true
+googleAnalytics: ''
+preserveTaxonomyNames: true
+disableAliases: true
+themesDir: components
+theme:
+  - components/tnd-seo
+permalinks:
+  article: /blog/:year/:month/:title/
+blackfriday:
+  extensionsmask:
+    - noIntraEmphasis
+mediaTypes:
+  text/netlify:
+    delimiter: ''
+    suffixes:
+      - ''
+outputFormats:
+  HEADERS:
+    baseName: _headers
+    isPlainText: true
+    mediatype: text/netlify
+    notAlternative: true
+  REDIR:
+    baseName: _redirects
+    isPlainText: true
+    mediatype: text/netlify
+    notAlternative: true
+outputs:
+  home:
+    - HTML
+    - HEADERS
+    - REDIR
+sitemap:
+  changefreq: monthly
+  filename: sitemap.xml
+  priority: 0.5
+social: {}
+taxonomies:
+  tag: tags

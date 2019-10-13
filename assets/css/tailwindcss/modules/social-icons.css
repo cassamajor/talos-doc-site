@@ -1,0 +1,26 @@
+.facebook,
+.twitter,
+.instagram,
+.youtube,
+.meetup,
+.slack,
+.github {
+  color: #222;
+}
+.facebook:hover {
+  color: #3b5998;
+}
+.github:hover {
+    color: #777777;
+  }
+.twitter:hover {
+  color: #55acee;
+}
+.instagram:hover,
+.slack:hover {
+  color: #e95950;
+}
+.youtube:hover,
+.meetup:hover {
+  color: #bb0000;
+}

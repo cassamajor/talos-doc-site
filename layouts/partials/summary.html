@@ -1,0 +1,29 @@
+<div class="max-w-sm rounded overflow-hidden shadow-lg mb-8">
+  {{ with .Params.image }}
+    {{ with .file }}
+      {{ $image := resources.Get (string . ) }}
+      {{ $image := $image.Resize "400x"}}
+        <img class="float-right h-24 m-2 rounded-lg" src="{{ $image.Permalink }}" alt="">
+      {{ end }}
+    {{ end }}
+  <div class="px-6 py-4">
+    <div class="font-headings font-bold text-xl mb-2 hover:underline"><a href="{{.Permalink}}">{{.Title}}</a></div>
+    {{ with .Description }}
+        <p>{{ . | markdownify }}</p>
+    {{ end }}
+  </div>
+  <div class="px-6 py-4">
+      {{ with .Params.Author }}
+          <h4>By: {{ . | title }}<h4/>
+      {{ end }}
+      {{ with .Params.tags }}
+      {{ range . }}{{ $name := . }}
+        {{ with $.Site.GetPage (printf "/%s/%s" "tags" ($name | urlize)) }}
+          <a href="{{ .Permalink }}" class="inline-block hover:bg-gray-400 bg-gray-200 rounded-full px-3 py-1 text-xs font-sans font-semibold text-gray-700 mr-2">{{ $name }}</a>
+        {{ end }}
+      {{ end }}
+    </div>
+  {{ end }}
+</div>
+
+

@@ -1,0 +1,26 @@
+footer:
+  - identifier: return
+    name: Return to Talos Systems
+    url: https://www.talos-systems.com/
+    weight: 1
+docs:
+  - identifier: guides
+    name: Guides
+    url: /docs/guides/
+    weight: 10
+  - identifier: faqs
+    name: FAQs
+    url: /docs/faqs/
+    weight: 15
+  - identifier: use-cases
+    name: Use Cases
+    url: /docs/use_cases/
+    weight: 20
+  - identifier: configuration
+    name: Configuration
+    url: /docs/configuration/
+    weight: 30
+  - identifier: components
+    name: Components
+    url: /docs/components/
+    weight: 40

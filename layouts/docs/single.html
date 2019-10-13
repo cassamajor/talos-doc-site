@@ -1,0 +1,25 @@
+{{ define "main" }}
+
+<div class="md:flex flex-wrap">
+
+    <div class="w-full md:w-1/4 mt-16">
+      {{- partial "docs-sidebar" . -}}
+    </div>
+
+    <div class="w-full md:w-3/4">
+      <article class="h-entry sm:px-4 max-w-3xl mx-auto c-rich-text">
+        {{- partial "_components/page-heading.html" . -}}
+
+        {{ if eq "master" $.Site.Params.TALOSDOCSVERSION }}
+          {{ partial "edit-this-page.html" . }}
+        {{ end }}
+        <section class="border-t pt-4">
+          {{partial "_components/image-article.html" .}}
+          {{ .Content }}
+        </section>
+      </article>
+    </div>
+
+</div>
+
+{{ end }}
