@@ -2,9 +2,9 @@
 
 Talos documentation is split into two parts:
 
-1. This repository, which is a Hugo theme and associated tools to generate the static
+1. This repository, which is a [Hugo](https://gohugo.io) theme and associated tools to generate the static
    documentation site.
-2. The actual documentation content, which lives in the main Talos repository.
+2. The actual documentation content, which lives in the main [Talos repository](https://github.com/talos-systems/talos/tree/master/docs/content).
 
 ## Local development
 
@@ -16,7 +16,7 @@ yarn install
 yarn run dev
 ```
 
-You should be able to access the test site at http://localhost:3000/.
+Once Yarn is running, you should be able to access the test site at http://localhost:3000/.
 
 The documentation content lives in the `talos` repository and is pulled into this site
 generator via a Git submodule.
