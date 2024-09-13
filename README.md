@@ -4,7 +4,7 @@ Talos documentation is split into two parts:
 
 1. This repository, which is a [Hugo](https://gohugo.io) theme and associated tools to generate the static
    documentation site.
-2. The actual documentation content, which lives in the main [Talos repository](https://github.com/talos-systems/talos/tree/master/docs/content).
+2. The actual documentation content, which lives in the main [Talos repository](https://github.com/siderolabs/talos/tree/master/website).
 
 ## Local development
 
